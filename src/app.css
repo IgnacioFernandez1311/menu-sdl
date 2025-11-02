@@ -1,0 +1,407 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Georgia", serif;
+  /* Updated background to match the warm beige/cream aesthetic from the image */
+  background: #f5e6d3;
+  min-height: 100vh;
+  padding: 1rem;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Added large decorative circles in the background like in the image */
+body::before {
+  content: "";
+  position: absolute;
+  top: -100px;
+  right: -100px;
+  width: 400px;
+  height: 400px;
+  background: rgba(232, 212, 184, 0.5);
+  border-radius: 50%;
+  z-index: 0;
+}
+
+body::after {
+  content: "";
+  position: absolute;
+  bottom: -150px;
+  right: 50px;
+  width: 500px;
+  height: 500px;
+  background: rgba(232, 212, 184, 0.4);
+  border-radius: 50%;
+  z-index: 0;
+}
+
+.container {
+  max-width: 100%;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.decorations {
+  display: none;
+}
+
+.sparkle {
+  font-size: 2rem;
+  color: #5d4e37;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.circle {
+  width: 60px;
+  height: 60px;
+  border: 3px solid rgba(93, 78, 55, 0.3);
+  border-radius: 50%;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.circle-small {
+  width: 30px;
+  height: 30px;
+  border: 2px solid rgba(93, 78, 55, 0.3);
+  border-radius: 50%;
+  display: block;
+}
+
+.coffee-beans {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.bean {
+  width: 40px;
+  height: 25px;
+  background: transparent;
+  border: 2.5px solid #5d4e37;
+  border-radius: 50%;
+  position: relative;
+  display: inline-block;
+  transform: rotate(-20deg);
+}
+
+.bean::after {
+  content: "";
+  position: absolute;
+  width: 2px;
+  height: 15px;
+  background: #5d4e37;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(20deg);
+}
+
+.star {
+  font-size: 1.5rem;
+  color: #5d4e37;
+}
+
+.title {
+  /* Made title larger and bolder to match the image */
+  font-size: 3.5rem;
+  font-weight: 900;
+  color: #3d2817;
+  letter-spacing: 0.5rem;
+  margin: 1rem 0;
+  font-family: "Georgia", serif;
+}
+
+.title-underline {
+  width: 90%;
+  max-width: 500px;
+  height: 4px;
+  background: #3d2817;
+  margin: 0 auto;
+}
+
+.content {
+  position: relative;
+}
+
+.menu-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.menu-column {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.menu-section {
+  background: transparent;
+}
+
+.section-title {
+  /* Adjusted font size and weight for better hierarchy */
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #3d2817;
+  margin-bottom: 1rem;
+  cursor: pointer;
+  list-style: none;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  padding: 0.5rem 0;
+  font-family: "Arial", sans-serif;
+}
+
+.section-title::-webkit-details-marker {
+  display: none;
+}
+
+.menu-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.menu-list li {
+  color: #3d2817;
+  font-size: 0.95rem;
+  margin-bottom: 0.4rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05rem;
+  line-height: 1.6;
+  font-family: "Arial", sans-serif;
+  font-weight: 500;
+}
+
+.menu-list-bullets li {
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.menu-list-bullets li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  font-size: 1.5rem;
+  color: #3d2817;
+}
+
+.menu-list-numbered {
+  counter-reset: item;
+}
+
+.menu-list-numbered li {
+  counter-increment: item;
+  padding-left: 2rem;
+  position: relative;
+}
+
+.menu-list-numbered li::before {
+  content: counter(item) ".";
+  position: absolute;
+  left: 0;
+  font-weight: bold;
+  color: #3d2817;
+}
+
+.coffee-cup-decoration {
+  display: none;
+}
+
+.food-section {
+  margin-top: 3rem;
+}
+
+.section-header {
+  /* Made section header larger and bolder like in the image */
+  font-size: 3rem;
+  font-weight: 900;
+  color: #3d2817;
+  text-align: center;
+  letter-spacing: 0.5rem;
+  margin-bottom: 1rem;
+  font-family: "Georgia", serif;
+}
+
+.section-underline {
+  width: 80%;
+  max-width: 450px;
+  height: 4px;
+  background: #3d2817;
+  margin: 0 auto 2rem;
+}
+
+.food-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.food-column {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.desserts-list {
+  margin-top: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  body {
+    padding: 2rem;
+  }
+
+  /* Adjusted decorative circles for larger screens */
+  body::before {
+    top: -150px;
+    right: -150px;
+    width: 600px;
+    height: 600px;
+  }
+
+  body::after {
+    bottom: -200px;
+    right: 100px;
+    width: 700px;
+    height: 700px;
+  }
+
+  .container {
+    max-width: 900px;
+  }
+
+  .header {
+    margin-bottom: 3rem;
+  }
+
+  .decorations {
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+
+  .coffee-beans {
+    position: absolute;
+    right: 0;
+    top: 0;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.5rem;
+    margin-bottom: 0;
+  }
+
+  .bean {
+    width: 50px;
+    height: 30px;
+    border: 3px solid #5d4e37;
+  }
+
+  .bean::after {
+    height: 20px;
+  }
+
+  .star {
+    font-size: 2rem;
+  }
+
+  .title {
+    font-size: 5.5rem;
+    letter-spacing: 0.8rem;
+    margin: 2rem 0 1rem;
+  }
+
+  .title-underline {
+    width: 500px;
+    height: 5px;
+  }
+
+  .menu-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    margin-bottom: 4rem;
+  }
+
+  .menu-column {
+    gap: 2rem;
+  }
+
+  .section-title {
+    font-size: 1.4rem;
+  }
+
+  .menu-list li {
+    font-size: 1.05rem;
+  }
+
+  .coffee-cup-decoration {
+    display: block;
+    position: absolute;
+    right: -50px;
+    top: 50%;
+    width: 80px;
+    height: 60px;
+    border: 3px solid #5d4e37;
+    border-radius: 0 0 40% 40%;
+    border-top: none;
+  }
+
+  .coffee-cup-decoration::before {
+    content: "";
+    position: absolute;
+    right: -25px;
+    top: 10px;
+    width: 30px;
+    height: 30px;
+    border: 3px solid #5d4e37;
+    border-left: none;
+    border-radius: 0 50% 50% 0;
+  }
+
+  .food-section {
+    margin-top: 4rem;
+  }
+
+  .section-header {
+    font-size: 4.5rem;
+    letter-spacing: 0.8rem;
+  }
+
+  .section-underline {
+    width: 450px;
+    height: 5px;
+    margin: 0 auto 3rem;
+  }
+
+  .food-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+  }
+
+  .food-column {
+    gap: 2rem;
+  }
+
+  .desserts-list {
+    margin-top: 2rem;
+  }
+}
