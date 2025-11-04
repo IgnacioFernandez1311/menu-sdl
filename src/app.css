@@ -14,6 +14,22 @@ body {
   overflow-x: hidden;
 }
 
+.menu-list li {
+  width: 100%;
+  display: flex;
+  justify-items: space-between;
+  border-bottom: 1px solid rgba(61, 40, 23, 0.2);
+}
+
+.product-price {
+  text-align: right;
+}
+
+.menu-list li span {
+  width: 50%;
+  display: inline-block;
+}
+
 /* Added large decorative circles in the background like in the image */
 body::before {
   content: "";
@@ -276,8 +292,15 @@ body::after {
     height: 600px;
   }
 
+  .menu-list {
+    min-width: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
   body::after {
-    bottom: -200px;
+    width: 100%;
     right: 100px;
     width: 700px;
     height: 700px;
