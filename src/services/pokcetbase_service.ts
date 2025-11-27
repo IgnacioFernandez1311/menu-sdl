@@ -1,6 +1,6 @@
 import PocketBase from "pocketbase";
 
-const pb = new PocketBase('https://pocketbase-portfolio-backend-if.fly.dev');
+const pb = new PocketBase(import.meta.env.VITE_DB_ACCESS_URL);
 
 
 export const coffeeList = await pb.collection("coffeeList").getFullList();
