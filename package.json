@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "pocketbase": "^0.26.3",
     "preact": "^10.27.2"
   },
   "devDependencies": {
